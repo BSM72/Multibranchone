@@ -17,10 +17,10 @@ def divide(x, y):
 
 
 print("Select")
-print("1.Add ")
-print("2.Subtract ")
-print("3.Multiply ")
-print("4.Divide ")
+print("1.It is an Add ")
+print("2.It is an Subtract ")
+print("3.It is an Multiply ")
+print("4.It is Divide ")
 
 while True:
     # take input from the user
