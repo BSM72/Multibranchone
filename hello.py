@@ -17,10 +17,10 @@ def divide(x, y):
 
 
 print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
+print("1.Add Operator")
+print("2.Subtract Operator")
+print("3.Multiply Operator")
+print("4.Divide Operator")
 
 while True:
     # take input from the user
