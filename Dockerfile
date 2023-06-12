@@ -10,7 +10,7 @@ RUN npm install
 
 
 
-EXPOSE 4000
+EXPOSE 8080
 
 # RUN chmod +x entrypoint.sh # Override the entrypoint.sh
 CMD ["python", "./hello.py"]
