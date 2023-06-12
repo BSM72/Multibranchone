@@ -19,7 +19,7 @@ pipeline{
         {
             steps{
                 script{
-                    bat 'docker build -t multibranchone .'
+                    bat 'docker build -t bsm123/multibranchone .'
                     echo 'Build Docker Image'        
                   
                 }
