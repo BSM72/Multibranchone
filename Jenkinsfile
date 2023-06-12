@@ -11,12 +11,12 @@ pipeline{
     }
     stage('Login') {
       steps {
-        bat '$DOCKERHUB_CREDENTIALS_PSW | docker login -t -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        bat 'docker login --username=bsm123 --email=bsn7293@gmail.com'
       }
     }
     stage('Push') {
       steps {
-        bat 'docker push bsmdockerhub/jenkins-docker-hub'
+        bat 'docker push bsm123/jenkinsdockerhub'
       }
     }
         
