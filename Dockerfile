@@ -1,12 +1,12 @@
 FROM node
 
 # Set application working directory
-WORKDIR /Multibranchone
+# WORKDIR /Multibranchone
 
 COPY . .
 
 # Install node dependencies
-RUN npm install
+# RUN npm install
 
 
 
