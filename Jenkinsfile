@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('Build') {
       steps {
-        bat 'docker build -t BSM-dockerhub/jenkins-docker-hub .'
+        bat 'docker build -t bsmdockerhub/jenkins-docker-hub .'
       }
     }
     stage('Login') {
@@ -16,7 +16,7 @@ pipeline{
     }
     stage('Push') {
       steps {
-        bat 'docker push BSM-dockerhub/jenkins-docker-hub'
+        bat 'docker push bsmdockerhub/jenkins-docker-hub'
       }
     }
         
