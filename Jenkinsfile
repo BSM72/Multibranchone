@@ -18,7 +18,7 @@ pipeline{
         {
             steps{
                 script{
-                    sh 'docker build -t Multibranchone .'
+                   bat 'hello.py'
                     echo 'Build Docker Image'        
                   
                 }
