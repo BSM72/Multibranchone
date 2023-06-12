@@ -6,13 +6,22 @@ pipeline{
             steps{
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/BSM72/Multibranchone.git']])
                 echo 'Build'
-                sh 'hello.py'
             }
         }
         stage('Test')
         {
             steps{
                 echo 'TeST'
+            }
+        }
+        stage('Build Docker Image')
+        {
+            steps{
+                script{
+                    sh 'docker build -t Multibranchone .'
+                    echo 'Build Docker Image'        
+                  
+                }
             }
         }
         stage('Deploy')
