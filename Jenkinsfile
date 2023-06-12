@@ -25,6 +25,15 @@ pipeline{
                 }
             }
         }
+         stage('Pushing Docker Image On Docker Hub')
+        {
+            steps{
+                script{
+                    bat 'docker login -u bsm123 -p ${dockerhubpwd}'
+                    bat 'docker push bsm123/multibrnch'
+                }
+            }
+        }
         stage('Deploy')
         {
             steps{
