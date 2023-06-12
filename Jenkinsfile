@@ -1,7 +1,7 @@
 pipeline{
     agent any
      environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+//         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
          registry = "bsm123/multibrnch"
          registryCredential = 'dockerhub'
   }
