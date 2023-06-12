@@ -6,17 +6,17 @@ pipeline{
     stages{
         stage('Build') {
       steps {
-        sh 'docker build -t BSM-dockerhub/jenkins-docker-hub .'
+        bat 'docker build -t BSM-dockerhub/jenkins-docker-hub .'
       }
     }
     stage('Login') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage('Push') {
       steps {
-        sh 'docker push BSM-dockerhub/jenkins-docker-hub'
+        bat 'docker push BSM-dockerhub/jenkins-docker-hub'
       }
     }
         
