@@ -2,23 +2,40 @@ pipeline{
     agent any
      environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+         registry = "bsm123/multibrnch"
+         registryCredential = 'dockerhub'
   }
     stages{
-        stage('Build') {
-      steps {
-        bat 'docker build -t bsmdockerhub/jenkins-docker-hub .'
-      }
-    }
-    stage('Login') {
-      steps {
-        bat 'docker login --username=bsm123 --email=bsn7293@gmail.com'
-      }
-    }
-    stage('Push') {
-      steps {
-        bat 'docker push bsm123/jenkinsdockerhub'
-      }
-    }
+        stage('Building our image') {
+                    steps{
+                        script {
+                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                        }
+                    }
+            }
+        stage('Deploy our image') {
+            steps{
+                script {
+                docker.withRegistry( '', registryCredential ) {
+                    dockerImage.push()
+            }
+        }
+        
+//         stage('Build') {
+//       steps {
+//         bat 'docker build -t bsmdockerhub/jenkins-docker-hub .'
+//       }
+//     }
+//     stage('Login') {
+//       steps {
+//         bat 'docker login --username=bsm123 --email=bsn7293@gmail.com'
+//       }
+//     }
+//     stage('Push') {
+//       steps {
+//         bat 'docker push bsm123/jenkinsdockerhub'
+//       }
+//     }
         
 //         stage('Build')
 //         {
