@@ -29,10 +29,10 @@ pipeline{
         {
             steps{
                 script{
-                    withCredentials([string(credentialsId: 'bsm123', variable: 'dockerhubpwd')]) {
-                        bat 'docker login -u bsm123 -p ${dockerhubpwd}'
+//                     withCredentials([string(credentialsId: 'bsm123', variable: 'dockerhubpwd')]) {
+                        bat 'docker login -u bsm123 -p rabiapagala12'
                         bat 'docker push bsm123/multibrnch'    
-                    }
+//                     }
                 }
             }
         }
