@@ -22,7 +22,7 @@ pipeline{
         
         stage('Build') {
       steps {
-        bat 'docker build -t bsm123/jenkins-docker-hub .'
+        bat 'docker build -t bsm123/jenkinsdockerhub .'
       }
     }
 //     stage('Login') {
