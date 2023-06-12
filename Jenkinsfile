@@ -6,12 +6,12 @@ pipeline{
     stages{
         stage('Build') {
       steps {
-        bat '$DOCKERHUB_CREDENTIALS_PSW | docker build -t bsmdockerhub/jenkins-docker-hub .'
+        bat 'docker build -t bsmdockerhub/jenkins-docker-hub .'
       }
     }
     stage('Login') {
       steps {
-        bat 'docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        bat '$DOCKERHUB_CREDENTIALS_PSW | docker login -t -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage('Push') {
