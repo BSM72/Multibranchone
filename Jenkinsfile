@@ -11,7 +11,7 @@ pipeline{
         stage('Test')
         {
             steps{
-                bat 'hello.py'
+                
                 echo 'TeST'
             }
         }
@@ -19,7 +19,7 @@ pipeline{
         {
             steps{
                 script{
-                    bat 'docker build -t Multibranchone .'
+                    bat 'docker build -t multibranchone .'
                     echo 'Build Docker Image'        
                   
                 }
