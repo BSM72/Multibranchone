@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('Build') {
       steps {
-        bat 'docker build -t bsmdockerhub/jenkins-docker-hub .'
+        bat '$DOCKERHUB_CREDENTIALS_PSW | docker build -t bsmdockerhub/jenkins-docker-hub .'
       }
     }
     stage('Login') {
